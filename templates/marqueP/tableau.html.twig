@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Avengers{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Avengers</h1>
+
+        {% if marquesP is not empty %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Pouvoir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for mpr in marquesP %}
+                        <tr>
+                            <td>{{ mpr.id }}</td>
+                            <td>{{ mpr.url }}</td>
+                            <td>{{ mpr.commentaire }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Aucun Avenger trouvé.</p>
+        {% endif %}
+    </div>
+{% endblock %} 

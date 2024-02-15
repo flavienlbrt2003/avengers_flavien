@@ -28,6 +28,19 @@ class MarquePageController extends AbstractController
         return new Response("Url sauvegardé avec l'id ".$marqueP->getId());
     }
 
+    #[Route('/detail/{id}', name: 'detail')]
+    public function detail(EntityManagerInterface $entityManager, int $id): Response {
+        $marquePage = $entityManager->getRepository(MarquePage::class)->find($id);
+
+        if (!$marquePage) {
+            throw $this->createNotFoundException("Le marque-page demandé n'existe pas");
+        }
+
+        return $this->render('marqueP/detail.html.twig', [
+            'marquePage' => $marquePage,
+        ]);
+    }
+
 }
 
 ?>

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MarquePageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,6 +24,14 @@ class MarquePage
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $commentaire = null;
+
+    #[ORM\ManyToMany(targetEntity: MotCles::class, inversedBy: 'marquePages')]
+    private Collection $motCles;
+
+    public function __construct()
+    {
+        $this->motCles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -60,6 +70,42 @@ class MarquePage
     public function setcommentaire(?string $commentaire): static
     {
         $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    public function getMotCle(): ?motCles
+    {
+        return $this->mot_cle;
+    }
+
+    public function setMotCle(?motCles $mot_cle): static
+    {
+        $this->mot_cle = $mot_cle;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, motCles>
+     */
+    public function getMotCles(): Collection
+    {
+        return $this->motCles;
+    }
+
+    public function addMotCle(motCles $motCle): static
+    {
+        if (!$this->motCles->contains($motCle)) {
+            $this->motCles->add($motCle);
+        }
+
+        return $this;
+    }
+
+    public function removeMotCle(motCles $motCle): static
+    {
+        $this->motCles->removeElement($motCle);
 
         return $this;
     }

@@ -17,12 +17,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for mpr in marquesP %}
+                    {% for mp in marquesP %}
                         <tr>
-                            <td>{{ mpr.id }}</td>
-                            <td>{{ mpr.url }}</td>
-                            <td>{{ mpr.dateCreation | date("d/m/Y") }}</td>
-                            <td>{{ mpr.commentaire }}</td>
+                            <td>{{ mp.id }}</td>
+                            <td>{{ mp.url }}</td>
+                            <td>{{ mp.dateCreation | date("d/m/Y") }}</td>
+                            <td>{{ mp.commentaire }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

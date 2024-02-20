@@ -34,7 +34,7 @@ class MarquePageController extends AbstractController
         return new Response("Url sauvegardé avec l'id ".$marqueP->getId());
     }
 
-    #[Route('/detail/{id}', name: 'detail')]
+    #[Route('marque/detail/{id}', name: 'detailMarqueP')]
     public function detail(EntityManagerInterface $entityManager, int $id): Response {
         $marquePage = $entityManager->getRepository(MarquePage::class)->find($id);
 

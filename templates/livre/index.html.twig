@@ -1,0 +1,42 @@
+{# templates/marquePage/taleau.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des URL{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Livres</h1>
+
+        {% if livres is not empty %}
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>titre</th>
+                        <th>Date de parution</th>
+                        <th>Auteur</th>
+                        <th>Nb Page</th>
+                        <th>Détails</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for l in livres %}
+                        <tr>
+                            <td>{{ l.id }}</td>
+                            <td>{{ l.titre }}</td>
+                            <td>{{ l.dateParution | date("d/m/Y") }}</td>
+                            <td>{{ l.auteur }}</td>
+                            <td>{{ l.nbPages }}</td>
+                            <td><a href="http://localhost:8000/livre/detail/{{l.id}}">Détails</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Aucun livre trouvé.</p>
+        {% endif %}
+    </div>
+{% endblock %} 

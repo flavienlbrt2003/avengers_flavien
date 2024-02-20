@@ -1,0 +1,36 @@
+{# templates/cailloux/faune.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Faunes{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Faunes</h1>
+
+        {% if faunes is not empty %}
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in faunes %}
+                        <tr>
+                            <td>{{ f.id }}</td>
+                            <td>{{ f.image }}</td>
+                            <td>{{ f.commentaire }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Aucune faune trouvé.</p>
+        {% endif %}
+    </div>
+{% endblock %} 

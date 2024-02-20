@@ -1,19 +1,24 @@
+{# templates/marquePage/taleau.html.twig #}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Liste des URL{% endblock %}
+
+{% block stylesheets %}{% endblock %}
 
 {% block body %}
     <div class="container">
         <h1>Liste des URL</h1>
 
         {% if marquesP is not empty %}
-            <table class="table">
+            <table class="table-custom">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>URL</th>
-                        <th>Année de création</th>
+                        <th>Url</th>
+                        <th>Date de création</th>
                         <th>Commentaire</th>
+                        <th>Détails</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +28,7 @@
                             <td>{{ mp.url }}</td>
                             <td>{{ mp.dateCreation | date("d/m/Y") }}</td>
                             <td>{{ mp.commentaire }}</td>
+                            <td><a href="http://localhost:8000/marque/detail/{{mp.id}}">Détails</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

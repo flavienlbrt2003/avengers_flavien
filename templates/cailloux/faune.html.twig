@@ -23,7 +23,7 @@
                     {% for f in faunes %}
                         <tr>
                             <td>{{ f.id }}</td>
-                            <td>{{ f.image }}</td>
+                            <td><img src={{ f.image }} width=100 height=100></img></td>
                             <td>{{ f.commentaire }}</td>
                         </tr>
                     {% endfor %}

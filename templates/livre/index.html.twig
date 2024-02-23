@@ -16,8 +16,8 @@
                     <tr>
                         <th>ID</th>
                         <th>titre</th>
-                        <th>Date de parution</th>
                         <th>Auteur</th>
+                        <th>Date de parution</th>
                         <th>Nb Page</th>
                         <th>Détails</th>
                     </tr>
@@ -27,8 +27,8 @@
                         <tr>
                             <td>{{ l.id }}</td>
                             <td>{{ l.titre }}</td>
+                            <td>{{ l.getAuteurId().nom }} {{l.getAuteurId().prenom}}</td>
                             <td>{{ l.dateParution | date("d/m/Y") }}</td>
-                            <td>{{ l.auteur }}</td>
                             <td>{{ l.nbPages }}</td>
                             <td><a href="http://localhost:8000/livre/detail/{{l.id}}">Détails</a></td>
                         </tr>

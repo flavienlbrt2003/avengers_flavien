@@ -18,7 +18,7 @@ class MarquePageController extends AbstractController
         ]);
     }
 
-    #[Route('/marque/ajouter', name: "marqueP_ajouter")]
+    /* #[Route('/marque/ajouter', name: "marqueP_ajouter")]
     public function ajouterMarque(EntityManagerInterface $entityManager): Response {
         $motCle = new MotCles();
         $motCle->setLibelle("Symfony");
@@ -32,7 +32,7 @@ class MarquePageController extends AbstractController
         $entityManager->persist($marqueP);
         $entityManager->flush();
         return new Response("Url sauvegardé avec l'id ".$marqueP->getId());
-    }
+    } */
 
     #[Route('marque/detail/{id}', name: 'detailMarqueP')]
     public function detail(EntityManagerInterface $entityManager, int $id): Response {

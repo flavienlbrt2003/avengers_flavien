@@ -34,7 +34,10 @@
             </tr>
             <tr>
                 <th scope="row"> Auteur </th>
-                <td>{{ livre.auteur }}</td>
+                <td>
+                    {{livre.getAuteurId().nom}}
+                    {{livre.getAuteurId().prenom}}
+                </td>
             </tr>
             <tr>
                 <th scope="row"> Nb pages </th>

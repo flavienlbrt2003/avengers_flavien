@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Auteurs{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Auteur ayant écrit plus de {{ nbLivre }} Livres</h1>
+
+        {% if listeAuteur is not empty %}
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Nombre de livres</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for l in listeAuteur %}
+                        <tr>
+                            <td>{{ l[0].id }}</td>
+                            <td>{{ l[0].nom }}</td>
+                            <td>{{ l[0].prenom }} </td>
+                            <td>{{ l.nombre_de_livres }} </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+        {% else %}
+            <p>Aucun auteur trouvé.</p>
+            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+        {% endif %}
+    </div>
+{% endblock %} 

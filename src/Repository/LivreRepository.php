@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Livre;
+use App\Entity\Auteur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -39,6 +40,7 @@ class LivreRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    // Requête non demandé, voir READMDE.md
     public function LivresAuteur($auteurId): array{
         $entityManager = $this->getEntityManager();
         $query = $entityManager->createQuery(
@@ -46,6 +48,18 @@ class LivreRepository extends ServiceEntityRepository
             FROM App\Entity\Livre l
             WHERE (l.auteur_id = :auteurid)')
             ->setParameter('auteurid', $auteurId);
+        return $query->getResult();
+    }
+
+    public function NbLivresAuteur($nbLivre): array {
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT a, COUNT(l.id) as nombre_de_livres
+            FROM App\Entity\Auteur a
+            JOIN a.livres l
+            GROUP BY a.id
+            HAVING COUNT(l.id) > :nbLivre'
+        )->setParameter('nbLivre', $nbLivre);
         return $query->getResult();
     }
 

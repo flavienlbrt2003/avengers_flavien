@@ -6,7 +6,7 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Livres commencant par la lettre ...</h1>
+        <h1>Liste des Livres commencant par la lettre {{ lettre }}</h1>
 
         {% if listeLivre is not empty %}
             <table class="table-custom">
@@ -35,8 +35,10 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
         {% else %}
             <p>Aucun livre trouvé.</p>
+            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
         {% endif %}
     </div>
 {% endblock %} 

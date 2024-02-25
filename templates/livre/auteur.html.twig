@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des URL{% endblock %}
+{% block title %}Liste des Livre{% endblock %}
 
 {% block stylesheets %}{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Livres de l'auteur ...</h1>
+        <h1>Liste des Livres de l'auteur {{ auteurId }}</h1>
 
         {% if listeLivre is not empty %}
             <table class="table-custom">
@@ -35,8 +35,10 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
         {% else %}
             <p>Aucun livre trouvé.</p>
+            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
         {% endif %}
     </div>
 {% endblock %} 

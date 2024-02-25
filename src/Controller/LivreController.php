@@ -40,15 +40,26 @@ class LivreController extends AbstractController
         $listeLivres = $entityManager->getRepository(Livre::class)->LivresPremiereLettre($lettre);
         return $this->render('livre/premiereL.html.twig', [
             'listeLivre' => $listeLivres,
+            'lettre' => $lettre,
         ]);
     }
 
+    // Route non demandé, voir READMDE.md
     #[Route('/livre/auteur/{auteurId}', name: 'LivreAuteur')]
     public function AfficherLivresAuteur($auteurId, EntityManagerInterface $entityManager){
         $listeLivres = $entityManager->getRepository(Livre::class)->LivresAuteur($auteurId);
         return $this->render('livre/auteur.html.twig', [
             'listeLivre' => $listeLivres,
+            'auteurId' => $auteurId,
         ]);
     }
-    
+
+    #[Route('/livre/listeAuteur/{nbLivre}', name: 'nbLivreAuteur')]
+    public function AfficherNbLivresAuteur($nbLivre, EntityManagerInterface $entityManager){
+        $listeAuteur = $entityManager->getRepository(Livre::class)->NbLivresAuteur($nbLivre);
+        return $this->render('livre/listeAuteur.html.twig', [
+            'listeAuteur' => $listeAuteur,
+            'nbLivre' => $nbLivre,
+        ]);
+    }
 }

@@ -2,13 +2,13 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des Flore{% endblock %}
+{% block title %}Liste de la Flore{% endblock %}
 
 {% block stylesheets %}{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Flore</h1>
+        <h1>Liste de la  Flore</h1>
 
         {% if flore is not empty %}
             <table class="table-custom">
@@ -23,7 +23,7 @@
                     {% for f in flore %}
                         <tr>
                             <td>{{ f.id }}</td>
-                            <td><img src={{ f.image }} width=100 height=100></img></td>
+                            <td><img src={{ f.image }} width=20% height=20%></img></td>
                             <td>{{ f.commentaire }}</td>
                         </tr>
                     {% endfor %}

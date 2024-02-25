@@ -25,7 +25,7 @@
                     {% for mp in marquesP %}
                         <tr>
                             <td>{{ mp.id }}</td>
-                            <td>{{ mp.url }}</td>
+                            <td><a href="{{ mp.url }}" target="_blank">{{ mp.url }}</a></td>
                             <td>{{ mp.dateCreation | date("d/m/Y") }}</td>
                             <td>{{ mp.commentaire }}</td>
                             <td><a href="http://localhost:8000/marque/detail/{{mp.id}}">Détails</a></td>

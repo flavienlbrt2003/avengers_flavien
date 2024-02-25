@@ -6,9 +6,9 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Livres</h1>
+        <h1>Liste des Livres commencant par la lettre ...</h1>
 
-        {% if livres is not empty %}
+        {% if listeLivre is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for l in livres %}
+                    {% for l in listeLivre %}
                         <tr>
                             <td>{{ l.id }}</td>
                             <td>{{ l.titre }}</td>
@@ -35,10 +35,8 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <br>
-            <p>Nombre de livres enregistrés : {{ nbLivre[0][1] }}</p>
         {% else %}
             <p>Aucun livre trouvé.</p>
         {% endif %}
     </div>
-{% endblock %}
+{% endblock %} 

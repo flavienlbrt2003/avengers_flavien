@@ -21,6 +21,34 @@ class LivreRepository extends ServiceEntityRepository
         parent::__construct($registry, Livre::class);
     }
 
+    public function NbLivres(): array{
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT COUNT(l)
+            FROM App\Entity\Livre l');
+        return $query->getResult();
+    }
+
+    public function LivresPremiereLettre($lettre): array{
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT l
+            FROM App\Entity\Livre l
+            WHERE (l.titre LIKE :lettre)')
+            ->setParameter('lettre', $lettre.'%');
+        return $query->getResult();
+    }
+
+    public function LivresAuteur($auteurId): array{
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT l
+            FROM App\Entity\Livre l
+            WHERE (l.auteur_id = :auteurid)')
+            ->setParameter('auteurid', $auteurId);
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Livre[] Returns an array of Livre objects
 //     */

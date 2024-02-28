@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des Livre{% endblock %}
+{% block title %}Liste des Livres{% endblock %}
 
 {% block stylesheets %}{% endblock %}
 
@@ -12,10 +12,8 @@
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>titre</th>
+                        <th>Titre</th>
                         <th>Auteur</th>
-                        <th>AuteurID</th>
                         <th>Date de parution</th>
                         <th>Nb Page</th>
                         <th>Détails</th>
@@ -24,10 +22,8 @@
                 <tbody>
                     {% for l in listeLivre %}
                         <tr>
-                            <td>{{ l.id }}</td>
                             <td>{{ l.titre }}</td>
                             <td>{{ l.getAuteurId().nom }} {{l.getAuteurId().prenom}}</td>
-                            <td>{{ l.getAuteurId().id }}</td>
                             <td>{{ l.dateParution | date("d/m/Y") }}</td>
                             <td>{{ l.nbPages }}</td>
                             <td><a href="http://localhost:8000/livre/detail/{{l.id}}">Détails</a></td>
@@ -35,10 +31,11 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+            <a href="http://localhost:8000/auteur/modif/{{ auteurId }}">Modifier l'auteur</a><br>
+            <a href="http://localhost:8000/auteur"> Retour à la liste des auteurs</a>
         {% else %}
             <p>Aucun livre trouvé.</p>
-            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+            <a href="http://localhost:8000/auteur"> Retour à la liste des auteur</a>
         {% endif %}
     </div>
 {% endblock %} 

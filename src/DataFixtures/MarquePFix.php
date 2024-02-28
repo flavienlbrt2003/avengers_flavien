@@ -15,7 +15,7 @@ class MarquePFix extends Fixture
         // Faire un tableau / liste pour y stocker tout les mot clés à chaque fois qu'on en créer
         $listeMotCles = [];
 
-        // Boucle pour créer des mot clés
+        // Boucle pour créer des mot clés (V1)
         /* for ($i = 0; $i < 25; $i++) {
             $motCle = new MotCles();
             $motCle->setLibelle('MotClé '.$i);
@@ -23,7 +23,7 @@ class MarquePFix extends Fixture
             array_push($listeMotCles, $motCle);
         } */
 
-        // Création de 15 mots clés en dure pour avoir des meilleurs données pour les tests.
+        // Création de 15 mots clés en dure pour avoir des meilleurs données pour les tests. (V2)
 
         $motCle1 = new MotCles();
         $motCle1->setLibelle('Communication');
@@ -101,7 +101,7 @@ class MarquePFix extends Fixture
         array_push($listeMotCles, $motCle15);
         
 
-        // Boucle pour créer des marques pages
+        // Boucle pour créer des marques pages (V1)
         /* for ($i = 0; $i < 15; $i++) {
             $marqueP = new MarquePage();
             $marqueP->setUrl('https://exemple.url/'.$i);
@@ -116,7 +116,7 @@ class MarquePFix extends Fixture
         } */ 
 
 
-        // Création de 10 marques pages en dure pour avoir des meilleurs données pour les tests.
+        // Création de 10 marques pages en dure pour avoir des meilleurs données pour les tests. (V2)
 
         $marqueP1 = new MarquePage();
         $marqueP1->setUrl('https://chat.openai.com');

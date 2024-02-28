@@ -12,19 +12,19 @@
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Nombre de livres</th>
+                        <th>Liste des livres de l'auteur</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for l in listeAuteur %}
                         <tr>
-                            <td>{{ l[0].id }}</td>
                             <td>{{ l[0].nom }}</td>
                             <td>{{ l[0].prenom }} </td>
                             <td>{{ l.nombre_de_livres }} </td>
+                            <td><a href="http://localhost:8000/auteur/liste/{{ l[0].id }}">Liste</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

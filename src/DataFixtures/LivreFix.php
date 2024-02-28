@@ -12,7 +12,7 @@ class LivreFix extends Fixture
     public function load(ObjectManager $manager): void
     {
 
-        // Boucle pour créer des auteurs et des livres
+        // Boucle pour créer des auteurs et des livres (V1)
         /* for ($i = 0; $i < 10; $i++) {
             $auteur = new Auteur();
             $auteur->setNom('Nom '.$i);
@@ -27,7 +27,7 @@ class LivreFix extends Fixture
             $manager->persist($livre);
         }  */
 
-        // Création de 10 auteurs et 16 livres en dure pour avoir des meilleurs données pour les tests.
+        // Création de 10 auteurs et 16 livres en dure pour avoir des meilleurs données pour les tests. (V2)
         $auteur1 = new Auteur();
         $auteur1->setNom('Rowling');
         $auteur1->setPrenom('J.K.');

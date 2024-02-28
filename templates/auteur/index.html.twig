@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Auteur{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Auteurs</h1>
+
+        <a class="btn-ajouter" href="http://localhost:8000/auteur/ajout">Ajouter un auteur</a><br><br>
+
+        {% if auteurs is not empty %}
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Modifier</th>
+                        <th>Liste des livres de l'auteur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in auteurs %}
+                        <tr>
+                            <td>{{ a.nom }}</td>
+                            <td>{{ a.prenom }}</td>
+                            <td><a href="http://localhost:8000/auteur/modif/{{a.id}}">Modifier</a></td>
+                            <td><a href="http://localhost:8000/auteur/liste/{{a.id}}">Liste</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p>Aucun auteur trouvé.</p>
+        {% endif %}
+    </div>
+{% endblock %}

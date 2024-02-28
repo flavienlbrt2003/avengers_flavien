@@ -21,6 +21,20 @@ h1 {
     margin-bottom: 30px;
 }
 
+.btn-ajouter {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-ajouter:hover {
+    background-color: #0056b3;
+}
+
 .table {
     margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -84,4 +98,85 @@ h1 {
         display: block;
         overflow-x: auto;
     }
+}
+
+
+/* FORMULAIRE */
+
+#livre {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#livre div {
+    margin-bottom: 15px;
+}
+
+#livre label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+#livre input[type="text"],
+#livre input[type="number"],
+#livre select {
+    width: 10vw;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#livre select {
+    width: 100px;
+}
+
+#livre button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#livre button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#auteur {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#auteur div {
+    margin-bottom: 15px;
+}
+
+#auteur label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+#auteur input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#auteur button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#auteur button[type="submit"]:hover {
+    background-color: #45a049;
 }

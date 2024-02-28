@@ -21,10 +21,6 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row"> ID </th>
-                <td>{{ livre.id }}</td>
-            </tr>
-            <tr>
                 <th scope="row"> Titre </th>
                 <td>{{ livre.titre }}</td>
             </tr>
@@ -34,16 +30,11 @@
             </tr>
             <tr>
                 <th scope="row"> Auteur </th>
-                <td>
-                    {{livre.getAuteurId().nom}}
-                    {{livre.getAuteurId().prenom}}
-                </td>
-            </tr>
-            <tr>
-                <th scope="row"> AuteurID </th>
-                <td>
-                    {{livre.getAuteurId().id}}
-                </td>
+                {% if livre.getAuteurId() is not empty %}
+                    <td>{{livre.getAuteurId().nom}} {{livre.getAuteurId().prenom}}</td>
+                {% else %}
+                    <td>Auteur inconnu</td>
+                {% endif %}
             </tr>
             <tr>
                 <th scope="row"> Nb pages </th>

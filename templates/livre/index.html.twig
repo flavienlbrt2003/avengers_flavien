@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des URL{% endblock %}
+{% block title %}Liste des Livres{% endblock %}
 
 {% block stylesheets %}{% endblock %}
 
@@ -8,29 +8,33 @@
     <div class="container">
         <h1>Liste des Livres</h1>
 
+        <a class="btn-ajouter" href="http://localhost:8000/livre/ajout">Ajouter un livre</a><br><br>
+
         {% if livres is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>titre</th>
+                        <th>Titre</th>
                         <th>Auteur</th>
-                        <th>AuteurID</th>
                         <th>Date de parution</th>
                         <th>Nb Page</th>
                         <th>Détails</th>
+                        <th>Modifier</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for l in livres %}
                         <tr>
-                            <td>{{ l.id }}</td>
                             <td>{{ l.titre }}</td>
-                            <td>{{ l.getAuteurId().nom }} {{l.getAuteurId().prenom}}</td>
-                            <td>{{ l.getAuteurId().id }}</td>
+                            {% if l.getAuteurId() is not empty %}
+                                <td>{{ l.getAuteurId().nom }} {{l.getAuteurId().prenom}}</td>
+                            {% else %}
+                                <td>Auteur inconnu</td>
+                            {% endif %}
                             <td>{{ l.dateParution | date("d/m/Y") }}</td>
                             <td>{{ l.nbPages }}</td>
                             <td><a href="http://localhost:8000/livre/detail/{{l.id}}">Détails</a></td>
+                            <td><a href="http://localhost:8000/livre/modif/{{l.id}}">Modifier</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

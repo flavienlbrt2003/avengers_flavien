@@ -43,9 +43,9 @@ class AuteurController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($auteur);
             $entityManager->flush();
-            return $this->redirectToRoute('Succes');
+            return $this->redirectToRoute('auteur_Succes');
         }
-        return $this->render('livre/auteurAjout.html.twig', [
+        return $this->render('auteur/auteurAjout.html.twig', [
             'form' => $form,
         ]);
     }

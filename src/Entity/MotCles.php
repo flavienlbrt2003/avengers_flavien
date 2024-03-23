@@ -57,7 +57,6 @@ class MotCles
             $this->marquePages->add($marquePage);
             $marquePage->addMotCle($this);
         }
-
         return $this;
     }
 
@@ -68,5 +67,9 @@ class MotCles
         }
 
         return $this;
+    }
+
+    public function __toString(): string {
+        return $this->libelle;
     }
 }

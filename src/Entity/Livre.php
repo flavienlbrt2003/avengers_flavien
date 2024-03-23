@@ -4,7 +4,9 @@ namespace App\Entity;
 
 use App\Repository\LivreRepository;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Auteur;
 
 #[ORM\Entity(repositoryClass: LivreRepository::class)]
 class Livre
@@ -23,8 +25,11 @@ class Livre
     #[ORM\Column(nullable: true)]
     private ?int $nbPages = null;
 
-    #[ORM\ManyToOne(inversedBy: 'livres')]
-    private ?auteur $auteur_id = null;
+    #[ORM\ManyToOne(targetEntity:"App\Entity\Auteur", inversedBy: 'livres')]
+    #[Assert\Type(type:"App\Entity\Auteur")]
+    #[Assert\Valid]
+    private ?auteur $auteur = null;
+
 
     public function getId(): ?int
     {
@@ -39,7 +44,6 @@ class Livre
     public function setTitre(string $titre): static
     {
         $this->titre = $titre;
-
         return $this;
     }
 
@@ -51,7 +55,6 @@ class Livre
     public function setDateParution(?\DateTimeInterface $dateParution): static
     {
         $this->dateParution = $dateParution;
-
         return $this;
     }
 
@@ -63,19 +66,17 @@ class Livre
     public function setNbPages(?int $nbPages): static
     {
         $this->nbPages = $nbPages;
-
         return $this;
     }
 
-    public function getAuteurId(): ?auteur
+    public function getAuteur(): ?auteur
     {
-        return $this->auteur_id;
+        return $this->auteur;
     }
 
-    public function setAuteurId(?auteur $auteur_id): static
+    public function setAuteur(?auteur $auteur): static
     {
-        $this->auteur_id = $auteur_id;
-
+        $this->auteur = $auteur;
         return $this;
     }
 }

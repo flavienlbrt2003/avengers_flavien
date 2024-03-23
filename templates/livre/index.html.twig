@@ -26,8 +26,8 @@
                     {% for l in livres %}
                         <tr>
                             <td>{{ l.titre }}</td>
-                            {% if l.getAuteurId() is not empty %}
-                                <td>{{ l.getAuteurId().nom }} {{l.getAuteurId().prenom}}</td>
+                            {% if l.getAuteur() is not empty %}
+                                <td>{{ l.getAuteur().nom }} {{l.getAuteur().prenom}}</td>
                             {% else %}
                                 <td>Auteur inconnu</td>
                             {% endif %}

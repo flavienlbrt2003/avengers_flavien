@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Mots Clés{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Mots Clés</h1>
+
+        <a class="btn-ajouter" href="http://localhost:8000/marque/motcleAjout">Ajouter un mots clés</a><br><br>
+
+        {% if motscles is not empty %}
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Libelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for mc in motscles %}
+                        <tr>
+                            <td>{{ mc.libelle }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p>Aucun mot clé trouvé.</p>
+        {% endif %}
+    </div>
+{% endblock %}

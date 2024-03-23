@@ -46,7 +46,6 @@ class MarquePage
     public function setUrl(string $url): static
     {
         $this->url = $url;
-
         return $this;
     }
 
@@ -55,11 +54,9 @@ class MarquePage
         return $this->date_creation;
     }
 
-    public function setDateCreation(\DateTimeInterface $date_creation): static
+    public function setDateCreation(\DateTimeInterface $date_creation)
     {
         $this->date_creation = $date_creation;
-
-        return $this;
     }
 
     public function getcommentaire(): ?string
@@ -67,23 +64,9 @@ class MarquePage
         return $this->commentaire;
     }
 
-    public function setcommentaire(?string $commentaire): static
+    public function setcommentaire(?string $commentaire)
     {
         $this->commentaire = $commentaire;
-
-        return $this;
-    }
-
-    public function getMotCle(): ?motCles
-    {
-        return $this->mot_cle;
-    }
-
-    public function setMotCle(?motCles $mot_cle): static
-    {
-        $this->mot_cle = $mot_cle;
-
-        return $this;
     }
 
     /**
@@ -99,7 +82,6 @@ class MarquePage
         if (!$this->motCles->contains($motCle)) {
             $this->motCles->add($motCle);
         }
-
         return $this;
     }
 

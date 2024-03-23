@@ -19,6 +19,7 @@ class LivreController extends AbstractController
     #[Route("/", name: "index")]
     public function afficherTable(EntityManagerInterface $entityManager): Response {
         $livre = $entityManager->getRepository(Livre::class)->findAll();
+        //$livre = array();
         $nbLivre = $entityManager->getRepository(Livre::class)->NbLivres();
         return $this->render('livre/index.html.twig', [
             'livres' => $livre,

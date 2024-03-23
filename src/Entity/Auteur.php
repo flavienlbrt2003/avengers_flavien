@@ -21,7 +21,7 @@ class Auteur
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $prenom = null;
 
-    #[ORM\OneToMany(targetEntity: Livre::class, mappedBy: 'auteur_id')]
+    #[ORM\OneToMany(targetEntity: Livre::class, mappedBy: 'auteur')]
     private Collection $livres;
 
     public function __construct()
@@ -42,7 +42,6 @@ class Auteur
     public function setNom(?string $nom): static
     {
         $this->nom = $nom;
-
         return $this;
     }
 
@@ -54,7 +53,6 @@ class Auteur
     public function setPrenom(?string $prenom): static
     {
         $this->prenom = $prenom;
-
         return $this;
     }
 
@@ -70,9 +68,8 @@ class Auteur
     {
         if (!$this->livres->contains($livre)) {
             $this->livres->add($livre);
-            $livre->setAuteurId($this);
+            $livre->setAuteur($this);
         }
-
         return $this;
     }
 
@@ -80,11 +77,14 @@ class Auteur
     {
         if ($this->livres->removeElement($livre)) {
             // set the owning side to null (unless already changed)
-            if ($livre->getAuteurId() === $this) {
-                $livre->setAuteurId(null);
+            if ($livre->getAuteur() === $this) {
+                $livre->setAuteur(null);
             }
         }
-
         return $this;
+    }
+
+    public function __toString(): string {
+        return $this->nom." ".$this->prenom;
     }
 }

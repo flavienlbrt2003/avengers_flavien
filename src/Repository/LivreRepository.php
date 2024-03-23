@@ -46,7 +46,7 @@ class LivreRepository extends ServiceEntityRepository
         $query = $entityManager->createQuery(
             'SELECT l
             FROM App\Entity\Livre l
-            WHERE (l.auteur_id = :auteurid)')
+            WHERE (l.auteur = :auteurid)')
             ->setParameter('auteurid', $auteurId);
         return $query->getResult();
     }

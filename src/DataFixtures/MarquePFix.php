@@ -229,8 +229,6 @@ class MarquePFix extends Fixture
         $manager->persist($marqueP10);
 
 
-
-
         $manager->flush();
     }
 }

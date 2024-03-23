@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+<style>
+    .container {
+        with: 20vw;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-family: courier;
+        font-weight: bold;
+    }
+</style>
+
+<div class="container">
+   <h1>Accueil</h1>
+   <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Employés
+            </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <ul>
+                    <li><a href="http://localhost:8000/employe"> --> Aller vers la liste des employés</a></li>
+                    <li><a href="http://localhost:8000/employe/ajout"> --> Ajouter un employé</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Marques Pages
+            </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <ul>
+                    <li><a href="http://localhost:8000/marque/page"> --> Aller vers la liste des marques pages</a></li>
+                    <li><a href="http://localhost:8000/marque/ajout"> --> Ajouter un marque page</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Mots Clés
+            </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <ul>
+                    <li><a href="http://localhost:8000/marque/motcle"> --> Aller vers la liste des mots clés</a></li>
+                    <li><a href="http://localhost:8000/marque/motcleAjout"> --> Ajouter un mot clé</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                Livres
+            </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <ul>
+                    <li><a href="http://localhost:8000/livre"> --> Aller vers la liste des livres</a></li>
+                    <li><a href="http://localhost:8000/livre/ajout"> --> Ajouter un livre</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                Auteurs
+            </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <ul>
+                    <li><a href="http://localhost:8000/auteur"> --> Aller vers la liste des auteurs</a></li>
+                    <li><a href="http://localhost:8000/auteur/ajout"> --> Ajouter un auteur</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                Faune
+            </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <ul>
+                    <li><a href="http://localhost:8000/Faune"> --> Aller vers la liste de la faune</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                Flore
+            </button>
+            </h2>
+            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <ul>
+                    <li><a href="http://localhost:8000/Flore"> --> Aller vers la liste de la flore</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

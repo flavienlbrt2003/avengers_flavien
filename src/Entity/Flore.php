@@ -32,7 +32,6 @@ class Flore
     public function setImage(string $image): static
     {
         $this->image = $image;
-
         return $this;
     }
 
@@ -44,7 +43,6 @@ class Flore
     public function setCommentaire(string $commentaire): static
     {
         $this->commentaire = $commentaire;
-
         return $this;
     }
 }

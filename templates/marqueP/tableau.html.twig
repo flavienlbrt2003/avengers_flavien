@@ -10,11 +10,12 @@
     <div class="container">
         <h1>Liste des URL</h1>
 
+        <a class="btn-ajouter" href="http://localhost:8000/marque/ajout">Ajouter un marque page</a><br><br>
+
         {% if marquesP is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Url</th>
                         <th>Date de création</th>
                         <th>Commentaire</th>
@@ -24,7 +25,6 @@
                 <tbody>
                     {% for mp in marquesP %}
                         <tr>
-                            <td>{{ mp.id }}</td>
                             <td><a href="{{ mp.url }}" target="_blank">{{ mp.url }}</a></td>
                             <td>{{ mp.dateCreation | date("d/m/Y") }}</td>
                             <td>{{ mp.commentaire }}</td>

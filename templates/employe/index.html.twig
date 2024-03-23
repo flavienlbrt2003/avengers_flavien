@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Employés{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Employés</h1>
+
+        <a class="btn-ajouter" href="http://localhost:8000/employe/ajout">Ajouter un Employé</a><br><br>
+
+
+        {% if employes is not empty %}
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Adresse</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in employes %}
+                        <tr>
+                            <td>{{ e.nom }}</td>
+                            <td>{{ e.prenom }}</td>
+                            {% if e.getAdresse() is not empty %}
+                                <td>{{ e.getAdresse().rue }}, {{e.getAdresse().codePostal}} {{e.getAdresse().ville}}</td>
+                            {% else %}
+                                <td>Auteur inconnu</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p>Aucun employé trouvé.</p>
+        {% endif %}
+    </div>
+{% endblock %}

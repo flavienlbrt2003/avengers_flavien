@@ -30,8 +30,8 @@
             </tr>
             <tr>
                 <th scope="row"> Auteur </th>
-                {% if livre.getAuteurId() is not empty %}
-                    <td>{{livre.getAuteurId().nom}} {{livre.getAuteurId().prenom}}</td>
+                {% if livre.getAuteur() is not empty %}
+                    <td>{{livre.getAuteur().nom}} {{livre.getAuteur().prenom}}</td>
                 {% else %}
                     <td>Auteur inconnu</td>
                 {% endif %}

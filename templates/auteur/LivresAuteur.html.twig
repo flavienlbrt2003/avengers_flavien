@@ -23,7 +23,7 @@
                     {% for l in listeLivre %}
                         <tr>
                             <td>{{ l.titre }}</td>
-                            <td>{{ l.getAuteurId().nom }} {{l.getAuteurId().prenom}}</td>
+                            <td>{{ l.getAuteur().nom }} {{l.getAuteur().prenom}}</td>
                             <td>{{ l.dateParution | date("d/m/Y") }}</td>
                             <td>{{ l.nbPages }}</td>
                             <td><a href="http://localhost:8000/livre/detail/{{l.id}}">Détails</a></td>

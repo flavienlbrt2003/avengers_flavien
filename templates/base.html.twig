@@ -15,52 +15,66 @@
         {% endblock %}
     </head>
     <body>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid" style="display:flex; align-item:center; justify-content:flex-start;">
-                <img src="{{asset('img/logoWow.png')}}" alt="Logo" width="50" height="44" class="d-inline-block align-text-top">
-                <p style="margin:0" class="navbar-brand">Symfony dans tout ses états !</p>
-            </div>
-        </nav>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="http://localhost:8000/marque/page">Symfony</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://localhost:8000/marque/page">MarqueP</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                        Bibliothèque
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="http://localhost:8000/livre">Livres</a></li>
-                            <li><a class="dropdown-item" href="http://localhost:8000/auteur">Auteurs</a></li>
-                        </ul>
-                    </li>
-
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                        Cailloux
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="http://localhost:8000/cailloux/faune">Faune</a></li>
-                            <li><a class="dropdown-item" href="http://localhost:8000/cailloux/flore">Flore</a></li>
-                        </ul>
-                    </li>
-                    
-                </ul>
+        <div class="header">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid" style="display:flex; align-item:center; justify-content:flex-start;">
+                    <img src="{{asset('img/logoWow.png')}}" alt="Logo" width="50" height="44" class="d-inline-block align-text-top">
+                    <p style="margin:0" class="navbar-brand">Symfony dans tout ses états !</p>
                 </div>
+            </nav>
+            <div class="nav">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="http://localhost:8000">Accueil</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="http://localhost:8000/employe">Employés</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            Marque Page
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://localhost:8000/marque">Marques Pages</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/marque/motcle">Mots Clés</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            Bibliothèque
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://localhost:8000/livre">Livres</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/auteur">Auteurs</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            Cailloux
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://localhost:8000/cailloux/faune">Faune</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/cailloux/flore">Flore</a></li>
+                            </ul>
+                        </li>                   
+                    </ul>
+                    </div>
+                </div>
+            </nav>
             </div>
-        </nav>
+        </div>
+        <div class="block-body">
         {% block body %}{% endblock %}
-        <div class="card-body fixed-bottom">
+        </div>
+        <div class="card-footer fixed-bottom">
             <p class="card-text">Loubriat Flavien</p>
             <a href="https://loubriatnc.nc" class="btn btn-primary">Visité le portfolio</a>
             <p class="card-text">Année de parution : 2024</p>

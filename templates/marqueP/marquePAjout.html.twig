@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un marque page{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        h5{
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .btn-ajoutermc {
+            font-size: 1vw;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Marques Pages</h1>
+
+        {{ form_start(form) }}
+        
+        <div class="form-group">
+            <h5>{{ form_label(form.Url) }}</h5>
+            {{ form_widget(form.Url, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <h5>{{ form_label(form.DateCreation) }}</h5>
+            {{ form_widget(form.DateCreation, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <h5>{{ form_label(form.Commentaire) }}</h5>
+            {{ form_widget(form.Commentaire, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <h5>{{ form_label(form.motCles) }}</h5>
+            {% for motCle in form.motCles %}
+            <div>
+                {{ form_widget(motCle, {'attr': {'class': 'form-check-input'}}) }}
+                {{ form_label(motCle) }}
+            </div>
+            {% endfor %}
+        </div>
+
+        <a class="btn-ajoutermc" href="http://localhost:8000/marque/motcleAjout">--> Ajouter un mots clés</a><br><br>
+
+        <div class="form-group">
+            {{ form_widget(form.Valider, {'attr': {'class': 'btn'}}) }}
+        </div>
+        
+        {{ form_end(form) }}
+
+    </div>
+{% endblock %}

@@ -15,12 +15,14 @@
                 <thead>
                     <tr>
                         <th>Libelle</th>
+                        <th>Modifier</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for mc in motscles %}
                         <tr>
                             <td>{{ mc.libelle }}</td>
+                            <td><a href="http://localhost:8000/marque/modifMC/{{mc.id}}">Modifier</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

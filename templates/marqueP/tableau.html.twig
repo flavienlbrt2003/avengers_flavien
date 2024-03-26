@@ -20,6 +20,7 @@
                         <th>Date de création</th>
                         <th>Commentaire</th>
                         <th>Détails</th>
+                        <th>Modifier</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,7 @@
                             <td>{{ mp.dateCreation | date("d/m/Y") }}</td>
                             <td>{{ mp.commentaire }}</td>
                             <td><a href="http://localhost:8000/marque/detail/{{mp.id}}">Détails</a></td>
+                            <td><a href="http://localhost:8000/marque/modifMP/{{mp.id}}">Modifier</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

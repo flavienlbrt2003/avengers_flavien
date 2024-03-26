@@ -50,6 +50,22 @@ class MarquePageController extends AbstractController
         ]);
     }
 
+        // Bouton "Modifier" lorsque la table affiche des marques pages
+        #[Route('/modifMP/{id}', name: 'modifMP')]
+        public function MarquePModif($id, Request $request, EntityManagerInterface $entityManager): Response {
+            $marqueP = $entityManager->getRepository(MarquePage::class)->find($id);
+            $form = $this->createForm(MarquePType::class, $marqueP);
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+                $entityManager->persist($marqueP);
+                $entityManager->flush();
+                return $this->redirectToRoute('marque_succes');
+            }
+            return $this->render('marqueP/marquePAjout.html.twig', [
+                'form' => $form,
+            ]);
+        }
+
     #[Route('/marqueP_succes', name: 'succes')]
     public function MarquePSucces(EntityManagerInterface $entityManager): Response {
         return $this->render('marqueP/marqueP_succes.html.twig');
@@ -72,6 +88,22 @@ class MarquePageController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($motcle);
+            $entityManager->flush();
+            return $this->redirectToRoute('marque_motclesucces');
+        }
+        return $this->render('motsCles/motcleAjout.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
+    // Bouton "Modifier" lorsque la table affiche des marques pages
+    #[Route('/modifMC/{id}', name: 'modifMC')]
+    public function MotCleModif($id, Request $request, EntityManagerInterface $entityManager): Response {
+        $motC = $entityManager->getRepository(MotCles::class)->find($id);
+        $form = $this->createForm(MotClesType::class, $motC);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($motC);
             $entityManager->flush();
             return $this->redirectToRoute('marque_motclesucces');
         }

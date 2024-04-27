@@ -6,8 +6,8 @@
 
 {% block body %}
 <div class="container">
-    <h1>Votre mot clé à bien été enregistré ! ✅</h1>
-    <a href="http://localhost:8000/marque/motcle"> Retour à la liste des marques pages</a>
+    <h1>{% trans %}MotCle.marqueP_enregistre{% endtrans %} ! ✅</h1>
+    <a href="http://localhost:8000/{{_locale}}/marque/motcle">{% trans %}MarqueP.retour_marqueP{% endtrans %}</a>
 </div>
 
 {% endblock %}

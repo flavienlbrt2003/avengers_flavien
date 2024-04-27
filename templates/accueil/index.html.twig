@@ -24,18 +24,18 @@
 </style>
 
 <div class="container">
-   <h1>Accueil</h1>
+   <h1>{% trans %}Transversal.Accueil{% endtrans %}</h1>
    <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Employés
+                {% trans %}Transversal.Employes{% endtrans %}
             </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <ul>
-                    <li><a href="http://localhost:8000/employe"> --> Aller vers la liste des employés</a></li>
-                    <li><a href="http://localhost:8000/employe/ajout"> --> Ajouter un employé</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/employe"> --> {% trans %}Accueil.Employe.liste_employes{% endtrans %}</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/employe/ajout"> --> {% trans %}Accueil.Employe.ajouter_employe{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
@@ -44,13 +44,13 @@
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Marques Pages
+                {% trans %}Transversal.Marques_Pages{% endtrans %}
             </button>
             </h2>
             <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <ul>
-                    <li><a href="http://localhost:8000/marque/page"> --> Aller vers la liste des marques pages</a></li>
-                    <li><a href="http://localhost:8000/marque/ajout"> --> Ajouter un marque page</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/marque/"> --> {% trans %}Accueil.MarqueP.liste_marques_pages{% endtrans %}</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/marque/ajout"> --> {% trans %}Accueil.MarqueP.ajouter_marque_page{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
@@ -58,13 +58,13 @@
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Mots Clés
+                {% trans %}Accueil.MotCle.motcle{% endtrans %}
             </button>
             </h2>
             <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <ul>
-                    <li><a href="http://localhost:8000/marque/motcle"> --> Aller vers la liste des mots clés</a></li>
-                    <li><a href="http://localhost:8000/marque/motcleAjout"> --> Ajouter un mot clé</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/marque/motcle"> --> {% trans %}Accueil.MotCle.liste_mots_cles{% endtrans %}</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/marque/motcleAjout"> --> {% trans %}Accueil.MotCle.ajouter_mot_cle{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
@@ -72,50 +72,50 @@
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                Livres
+                {% trans %}Accueil.Livre.livre{% endtrans %}
             </button>
             </h2>
             <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <ul>
-                    <li><a href="http://localhost:8000/livre"> --> Aller vers la liste des livres</a></li>
-                    <li><a href="http://localhost:8000/livre/ajout"> --> Ajouter un livre</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/livre"> --> {% trans %}Accueil.Livre.liste_livres{% endtrans %}</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/livre/ajout"> --> {% trans %}Accueil.Livre.ajouter_livre{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                Auteurs
+                {% trans %}Transversal.Auteur{% endtrans %}
             </button>
             </h2>
             <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <ul>
-                    <li><a href="http://localhost:8000/auteur"> --> Aller vers la liste des auteurs</a></li>
-                    <li><a href="http://localhost:8000/auteur/ajout"> --> Ajouter un auteur</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/auteur"> --> {% trans %}Accueil.Auteur.liste_auteurs{% endtrans %}</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/auteur/ajout"> --> {% trans %}Accueil.Auteur.ajouter_auteur{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                Faune
+                {% trans %}Accueil.Faune.faune{% endtrans %}
             </button>
             </h2>
             <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <ul>
-                    <li><a href="http://localhost:8000/Faune"> --> Aller vers la liste de la faune</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/cailloux/faune"> --> {% trans %}Accueil.Faune.liste_faune{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                Flore
+                {% trans %}Accueil.Flore.flore{% endtrans %}
             </button>
             </h2>
             <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <ul>
-                    <li><a href="http://localhost:8000/Flore"> --> Aller vers la liste de la flore</a></li>
+                    <li><a href="http://localhost:8000/{{_locale}}/cailloux/flore"> --> {% trans %}Accueil.Flore.liste_flore{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>

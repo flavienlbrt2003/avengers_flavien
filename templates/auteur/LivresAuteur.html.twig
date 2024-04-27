@@ -6,17 +6,17 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Livres de l'auteur {{ auteurId }}</h1>
+        <h1>{% trans %}Livre.liste_livre_auteur{% endtrans %} {{ auteurId }}</h1>
 
         {% if listeLivre is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>Titre</th>
-                        <th>Auteur</th>
-                        <th>Date de parution</th>
+                        <th>{% trans %}Livre.titre{% endtrans %}</th>
+                        <th>{% trans %}Transversal.Auteur{% endtrans %}</th>
+                        <th>{% trans %}Livre.date_parution{% endtrans %}</th>
                         <th>Nb Page</th>
-                        <th>Détails</th>
+                        <th>{% trans %}Transversal.Details{% endtrans %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,16 +26,16 @@
                             <td>{{ l.getAuteur().nom }} {{l.getAuteur().prenom}}</td>
                             <td>{{ l.dateParution | date("d/m/Y") }}</td>
                             <td>{{ l.nbPages }}</td>
-                            <td><a href="http://localhost:8000/livre/detail/{{l.id}}">Détails</a></td>
+                            <td><a href="http://localhost:8000/{{_locale}}/livre/detail/{{l.id}}">{% trans %}Transversal.Details{% endtrans %}</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <a href="http://localhost:8000/auteur/modif/{{ auteurId }}">Modifier l'auteur</a><br>
-            <a href="http://localhost:8000/auteur"> Retour à la liste des auteurs</a>
+            <a href="http://localhost:8000/{{_locale}}/auteur/modif/{{ auteurId }}">{% trans %}Transversal.Modif_auteur{% endtrans %}</a><br>
+            <a href="http://localhost:8000/{{_locale}}/auteur">{% trans %}Auteur.retour_auteur{% endtrans %}</a>
         {% else %}
             <p>Aucun livre trouvé.</p>
-            <a href="http://localhost:8000/auteur"> Retour à la liste des auteur</a>
+            <a href="http://localhost:8000/{{_locale}}/auteur">{% trans %}Auteur.retour_auteur{% endtrans %}</a>
         {% endif %}
     </div>
 {% endblock %} 

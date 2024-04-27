@@ -10,26 +10,26 @@
 
 {% block body %}
 <div class="container mt-5">
-    <h1>Détails du Livre</h1>
+    <h1>{% trans %}Livre.detail_livre{% endtrans %}</h1>
 
     <table class="table-custom">
         <thead>
             <tr>
-                <th scope="col">Libelle</th>
-                <th scope="col">Valeur</th>
+                <th scope="col">{% trans %}Transversal.libelle{% endtrans %}</th>
+                <th scope="col">{% trans %}Transversal.valeur{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row"> Titre </th>
+                <th scope="row"> {% trans %}Livre.titre{% endtrans %}</th>
                 <td>{{ livre.titre }}</td>
             </tr>
             <tr>
-                <th scope="row"> Date Parution </th>
+                <th scope="row"> {% trans %}Livre.date_parution{% endtrans %}</th>
                 <td>{{ livre.dateParution | date("d/m/Y") }}</td>
             </tr>
             <tr>
-                <th scope="row"> Auteur </th>
+                <th scope="row"> {% trans %}Transversal.Auteur{% endtrans %}</th>
                 {% if livre.getAuteur() is not empty %}
                     <td>{{livre.getAuteur().nom}} {{livre.getAuteur().prenom}}</td>
                 {% else %}
@@ -43,6 +43,6 @@
             </tr>
         </tbody>
     </table>
-    <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+    <a href="http://localhost:8000/{{_locale}}/livre">{% trans %}Livre.retour_livre{% endtrans %}</a>
 </div>
 {% endblock %}

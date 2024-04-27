@@ -12,52 +12,58 @@ use App\Form\Type\LivreType;
 use App\Entity\Auteur;
 use App\Form\Type\AuteurType;
 
-#[Route("/livre", requirements: ["_locale" => "en|es|fr"], name: "livre_")]
+#[Route(path: "/{_locale}/livre", requirements: ["_locale" => "en|es|fr"], name: "livre_")]
 class LivreController extends AbstractController
 {
 
     #[Route("/", name: "index")]
-    public function afficherTable(EntityManagerInterface $entityManager): Response {
+    public function afficherTable(EntityManagerInterface $entityManager, Request $request): Response {
         $livre = $entityManager->getRepository(Livre::class)->findAll();
-        //$livre = array();
+        $locale = $request->getLocale();
         $nbLivre = $entityManager->getRepository(Livre::class)->NbLivres();
         return $this->render('livre/index.html.twig', [
             'livres' => $livre,
             'nbLivre' => $nbLivre,
+            '_locale' => $locale,
         ]);
     }
 
     // Bouton "détail"
     #[Route('/detail/{id}', name: 'detailLivre')]
-    public function detail(EntityManagerInterface $entityManager, int $id): Response {
+    public function detail(EntityManagerInterface $entityManager, int $id, Request $request): Response {
         $livre = $entityManager->getRepository(Livre::class)->find($id);
-
+        $locale = $request->getLocale();
         if (!$livre) {
             throw $this->createNotFoundException("Le livre demandé n'existe pas");
         }
 
         return $this->render('livre/detail.html.twig', [
             'livre' => $livre,
+            '_locale' => $locale,
         ]);
     }
 
     // Accessible uniquement par l'url
     #[Route('/lettre/{lettre}', name: 'LivreLettre')]
-    public function AfficherLivresPremiereLettre($lettre, EntityManagerInterface $entityManager){
+    public function AfficherLivresPremiereLettre($lettre, EntityManagerInterface $entityManager, Request $request){
         $listeLivres = $entityManager->getRepository(Livre::class)->LivresPremiereLettre($lettre);
+        $locale = $request->getLocale();
         return $this->render('livre/premiereL.html.twig', [
             'listeLivre' => $listeLivres,
             'lettre' => $lettre,
+            '_locale' => $locale,
         ]);
     }
 
     // Accessible uniquement par l'url
     #[Route('/listeAuteur/{nbLivre}', name: 'nbLivreAuteur')]
-    public function AfficherNbLivresAuteur($nbLivre, EntityManagerInterface $entityManager){
+    public function AfficherNbLivresAuteur($nbLivre, EntityManagerInterface $entityManager, Request $request){
         $listeAuteur = $entityManager->getRepository(Livre::class)->NbLivresAuteur($nbLivre);
+        $locale = $request->getLocale();
         return $this->render('livre/listeAuteur.html.twig', [
             'listeAuteur' => $listeAuteur,
             'nbLivre' => $nbLivre,
+            '_locale' => $locale,
         ]);
     }
 
@@ -67,6 +73,7 @@ class LivreController extends AbstractController
         $livre = new Livre();
         $form = $this->createForm(LivreType::class, $livre);
         $form->handleRequest($request);
+        $locale = $request->getLocale();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($livre);
             $entityManager->flush();
@@ -74,6 +81,7 @@ class LivreController extends AbstractController
         }
         return $this->render('livre/livreAjout.html.twig', [
             'form' => $form,
+            '_locale' => $locale,
         ]);
     }
 
@@ -83,6 +91,7 @@ class LivreController extends AbstractController
         $livre = $entityManager->getRepository(Livre::class)->find($id);
         $form = $this->createForm(LivreType::class, $livre);
         $form->handleRequest($request);
+        $locale = $request->getLocale();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($livre);
             $entityManager->flush();
@@ -90,11 +99,15 @@ class LivreController extends AbstractController
         }
         return $this->render('livre/livreAjout.html.twig', [
             'form' => $form,
+            '_locale' => $locale,
         ]);
     }
 
     #[Route('/livre_succes', name: 'Succes')]
-    public function LivreSucces(EntityManagerInterface $entityManager): Response {
-        return $this->render('livre/livre_succes.html.twig');
+    public function LivreSucces(EntityManagerInterface $entityManager, Request $request): Response {
+        $locale = $request->getLocale();
+        return $this->render('livre/livre_succes.html.twig', [
+            '_locale' => $locale,
+        ]);
     }
 }

@@ -10,14 +10,16 @@ use App\Entity\Employe;
 use App\Entity\Adresse;
 use App\Form\Type\EmployeType;
 
-#[Route("/employe", requirements: ["_locale" => "en|es|fr"], name: "employe_")]
+#[Route(path: "/{_locale}/employe", requirements: ["_locale" => "en|es|fr"], name: "employe_")]
 class EmployeController extends AbstractController
 {
     #[Route('/')]
-    public function afficherTable(EntityManagerInterface $entityManager): Response {
+    public function afficherTable(EntityManagerInterface $entityManager, Request $request): Response {
         $employes = $entityManager->getRepository(Employe::class)->findAll();
+        $locale = $request->getLocale();
         return $this->render('employe/index.html.twig', [
             'employes' => $employes,
+            '_locale' => $locale,
         ]);
     }
 
@@ -26,6 +28,7 @@ class EmployeController extends AbstractController
         $employe = new Employe();
         $form = $this->createForm(EmployeType::class, $employe);
         $form->handleRequest($request);
+        $locale = $request->getLocale();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($employe);
             $entityManager->flush();
@@ -33,12 +36,16 @@ class EmployeController extends AbstractController
         }
         return $this->render('employe/employeAjout.html.twig', [
             'form' => $form,
+            '_locale' => $locale,
         ]);
     }
 
     #[Route('/employe_succes', name: 'succes')]
-    public function EmployeSucces(EntityManagerInterface $entityManager): Response {
-        return $this->render('employe/employe_succes.html.twig');
+    public function EmployeSucces(EntityManagerInterface $entityManager, Request $request): Response {
+        $locale = $request->getLocale();
+        return $this->render('employe/employe_succes.html.twig', [
+            '_locale' => $locale,
+        ]);
     }
 
 }

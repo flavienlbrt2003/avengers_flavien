@@ -6,18 +6,18 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Employés</h1>
+        <h1>{% trans %}Employe.liste_employes{% endtrans %}</h1>
 
-        <a class="btn-ajouter" href="http://localhost:8000/employe/ajout">Ajouter un Employé</a><br><br>
+        <a class="btn-ajouter" href="http://localhost:8000/{{_locale}}/employe/ajout">{% trans %}Accueil.Employe.ajouter_employe{% endtrans %}</a><br><br>
 
 
         {% if employes is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Adresse</th>
+                        <th>{% trans %}Transversal.Nom{% endtrans %}</th>
+                        <th>{% trans %}Transversal.prenom{% endtrans %}</th>
+                        <th>{% trans %}Employe.adresse{% endtrans %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@
             </table>
 
         {% else %}
-            <p>Aucun employé trouvé.</p>
+            <p>{% trans %}Employe.aucun_employe{% endtrans %}</p>
         {% endif %}
     </div>
 {% endblock %}

@@ -6,8 +6,8 @@
 
 {% block body %}
 <div class="container">
-    <h1>Votre employé à bien été enregistré ! ✅</h1>
-    <a href="http://localhost:8000/employe"> Retour à la liste des employés</a>
+    <h1>{% trans %}Employe.employe_enregistre{% endtrans %} ! ✅</h1>
+    <a href="http://localhost:8000/{{_locale}}/employe">{% trans %}Employe.retour_employe{% endtrans %}</a>
 </div>
 
 {% endblock %}

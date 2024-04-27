@@ -39,27 +39,27 @@
 
 {% block body %}
     <div class="container">
-        <h1>Marques Pages</h1>
+        <h1>{% trans %}Transversal.Marques_Pages{% endtrans %}</h1>
 
         {{ form_start(form) }}
         
         <div class="form-group">
-            <h5>{{ form_label(form.Url) }}</h5>
+            <h5>URL</h5>
             {{ form_widget(form.Url, {'attr': {'class': 'form-control'}}) }}
         </div>
 
         <div class="form-group">
-            <h5>{{ form_label(form.DateCreation) }}</h5>
+            <h5>{% trans %}MarqueP.date_creation{% endtrans %}</h5>
             {{ form_widget(form.DateCreation, {'attr': {'class': 'form-control'}}) }}
         </div>
 
         <div class="form-group">
-            <h5>{{ form_label(form.Commentaire) }}</h5>
+            <h5>{% trans %}Transversal.Commentaire{% endtrans %}</h5>
             {{ form_widget(form.Commentaire, {'attr': {'class': 'form-control'}}) }}
         </div>
 
         <div class="form-group">
-            <h5>{{ form_label(form.motCles) }}</h5>
+            <h5>{% trans %}Transversal.Mots_Cles{% endtrans %}</h5>
             {% for motCle in form.motCles %}
             <div>
                 {{ form_widget(motCle, {'attr': {'class': 'form-check-input'}}) }}
@@ -68,7 +68,7 @@
             {% endfor %}
         </div>
 
-        <a class="btn-ajoutermc" href="http://localhost:8000/marque/motcleAjout">--> Ajouter un mots clés</a><br><br>
+        <a class="btn-ajoutermc" href="http://localhost:8000/{{_locale}}/marque/motcleAjout">--> {% trans %}Accueil.MotCle.ajouter_mot_cle{% endtrans %}</a><br><br>
 
         <div class="form-group">
             {{ form_widget(form.Valider, {'attr': {'class': 'btn'}}) }}

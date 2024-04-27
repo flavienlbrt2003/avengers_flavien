@@ -10,13 +10,13 @@
 
 {% block body %}
 <div class="container mt-5">
-    <h1>Détails du Marque-Page</h1>
+    <h1>{% trans %}MarqueP.detail_marqueP{% endtrans %}</h1>
 
     <table class="table-custom">
         <thead>
             <tr>
-                <th scope="col">Libelle</th>
-                <th scope="col">Valeur</th>
+                <th scope="col">{% trans %}Transversal.libelle{% endtrans %}</th>
+                <th scope="col">{% trans %}Transversal.valeur{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
@@ -29,15 +29,15 @@
                 <td>{{ marquePage.url }}</td>
             </tr>
             <tr>
-                <th scope="row"> commentaire </th>
+                <th scope="row">{% trans %}Transversal.Commentaire{% endtrans %}</th>
                 <td>{{ marquePage.commentaire }}</td>
             </tr>
             <tr>
-                <th scope="row"> dateCreation </th>
+                <th scope="row">{% trans %}MarqueP.date_creation{% endtrans %}</th>
                 <td>{{ marquePage.dateCreation|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
-                <th scope="row"> Mot Clés </th>
+                <th scope="row">{% trans %}Transversal.Mots_Cles{% endtrans %}</th>
                 <td>
                     {% for mc in marquePage.motCles %}
                         - {{ mc.libelle }} <br>
@@ -46,6 +46,6 @@
             </tr>
         </tbody>
     </table>
-    <a href="http://localhost:8000/marque"> Retour à la liste des marques pages</a>
+    <a href="http://localhost:8000/{{_locale}}/marque">{% trans %}MarqueP.retour_marqueP{% endtrans %}</a>
 </div>
 {% endblock %}

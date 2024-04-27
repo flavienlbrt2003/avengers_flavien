@@ -1,0 +1,120 @@
+Accueil:
+  Employe:
+    liste_employes: Aller vers la liste des employés
+    ajouter_employe : Ajouter un employé
+
+  MarqueP:
+    liste_marques_pages: Aller vers la liste des marques pages
+    ajouter_marque_page : Ajouter un marque page
+
+  MotCle:
+    motcle: Mots Clés
+    liste_mots_cles: Aller vers la liste des mots clés
+    ajouter_mot_cle : Ajouter un mot clé
+
+  Livre:
+    livre: Livres
+    liste_livres: Aller vers la liste des livres
+    ajouter_livre : Ajouter un livre
+
+  Auteur:
+    liste_auteurs: Aller vers la liste des auteurs
+    ajouter_auteur: Ajouter un auteur
+
+  Faune:
+    faune: Faune
+    liste_faune: Aller vers la liste de la faune
+
+  Flore:
+    flore: Flore
+    liste_flore: Aller vers la liste de la flore
+
+
+Employe:
+  liste_employes: Liste des Employés
+  adresse: Adresse
+  auncun_employe: Aucun employé trouvé
+  employe_enregistre: Votre employé à bien été enregistré
+  retour_employe: Retour à la liste des employés
+
+
+MarqueP:
+  liste_URL: Liste des URL
+  date_creation: Date de création
+  detail_marqueP: Détails du Marque-Page
+  auncun_marqueP: Aucun marque page trouvé
+  retour_marqueP: Retour à la liste des marques pages
+  marqueP_enregistre: Votre marque page à bien été enregistré
+
+
+MotCle:
+  liste_mots_cles: Liste des Mots Clés
+  auncun_marqueP: Aucun mot clé trouvé
+  marqueP_enregistre: Votre mot clé à bien été enregistré
+
+
+Livre:
+  liste_livres: Liste des Livres
+  titre: Titre
+  date_parution: Date de parution
+  detail_livre: Détails du livre
+  auncun_livre: Aucun livre trouvé
+  retour_livre: Retour à la liste des livres
+  nb_livre_enregistre: Nombre de livres enregistrés
+  liste_auteur_livre: Liste des Auteur ayant écrit plus de
+  nb_livre: Nombre de livres
+  liste_livre_auteur: Liste des livres de l'auteur
+  livre_enregistre: Votre livre à bien été enregistré
+  
+  
+Auteur:
+  Nom: Nom
+  liste_auteurs: Liste des Auteurs
+  liste: Liste
+  liste_livres_auteur: Liste des livres de l'auteur
+  auncun_auteur: Aucun auteur trouvé
+  auteur_enregistre: Votre auteur à bien été enregistré
+  retour_auteur: Retour à la liste des auteurs
+
+
+Faune:
+  liste_Faunes: Liste de la Faunes
+  aucune_faune: Aucune faune trouvé
+
+
+Flore:
+  liste_flores: Liste de la Flore
+  aucune_flore: Aucune flore trouvé
+
+Header:
+  titre: Symfony dans tout ses états !
+  biblio: Bibliothèque
+
+
+Footer:
+  portfolio: Visité le portfolio
+
+
+Transversal:
+  Accueil: Accueil
+  Employes: Employés
+  Employe: Employé
+  Marques_Pages: Marques Pages
+  Marque_Page: Marque-Page
+  Mot_Cle: Mot Clé
+  Mots_Cles: Mots Clés
+  Livres: Livres
+  Livre: Livre
+  Auteur: Auteur
+  Auteurs: Auteurs
+  Valider: Valider
+  Details: Détails
+  Modifier: Modifier
+  Nom: Nom
+  prenom: Prénom
+  Annee_parution: Année de parution
+  Commentaire: Commentaire
+  image: Image
+  Modif_auteur: Modifier l'auteur
+  libelle: Libelle
+  valeur: Valeur

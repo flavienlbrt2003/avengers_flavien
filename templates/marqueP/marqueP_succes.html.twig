@@ -6,9 +6,9 @@
 
 {% block body %}
 <div class="container">
-    <h1>Votre marque page à bien été enregistré ! ✅</h1>
-    <a href="http://localhost:8000/marque"> Retour à la liste des marques pages</a><br>
-    <a href="http://localhost:8000/marque/ajout"> Ajouter un marque page</a>
+    <h1>{% trans %}MarqueP.marqueP_enregistre{% endtrans %} ! ✅</h1>
+    <a href="http://localhost:8000/{{_locale}}/marque">{% trans %}MarqueP.retour_marqueP{% endtrans %}</a><br>
+    <a href="http://localhost:8000/{{_locale}}/marque/ajout">{% trans %}Accueil.MarqueP.ajouter_marque_page{% endtrans %}</a>
 </div>
 
 {% endblock %}

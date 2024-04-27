@@ -19,13 +19,13 @@
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid" style="display:flex; align-item:center; justify-content:flex-start;">
                     <img src="{{asset('img/logoWow.png')}}" alt="Logo" width="50" height="44" class="d-inline-block align-text-top">
-                    <p style="margin:0" class="navbar-brand">Symfony dans tout ses états !</p>
+                    <p style="margin:0" class="navbar-brand">{% trans %}Header.titre{% endtrans %}</p>
                 </div>
             </nav>
             <div class="nav">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="http://localhost:8000">Accueil</a>
+                    <a class="navbar-brand" href="http://localhost:8000/{{_locale}}">{% trans %}Transversal.Accueil{% endtrans %}</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -33,26 +33,26 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="http://localhost:8000/employe">Employés</a>
+                            <a class="nav-link active" aria-current="page" href="http://localhost:8000/{{_locale}}/employe">{% trans %}Transversal.Employes{% endtrans %}</a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                            Marque Page
+                            {% trans %}Transversal.Marques_Pages{% endtrans %}
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="http://localhost:8000/marque">Marques Pages</a></li>
-                                <li><a class="dropdown-item" href="http://localhost:8000/marque/motcle">Mots Clés</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/{{_locale}}/marque">{% trans %}Transversal.Marques_Pages{% endtrans %}</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/{{_locale}}/marque/motcle">{% trans %}Transversal.Mots_Cles{% endtrans %}</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                            Bibliothèque
+                            {% trans %}Header.biblio{% endtrans %}
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="http://localhost:8000/livre">Livres</a></li>
-                                <li><a class="dropdown-item" href="http://localhost:8000/auteur">Auteurs</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/{{_locale}}/livre">{% trans %}Transversal.Livres{% endtrans %}</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/{{_locale}}/auteur">{% trans %}Transversal.Auteurs{% endtrans %}</a></li>
                             </ul>
                         </li>
 
@@ -61,8 +61,8 @@
                             Cailloux
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="http://localhost:8000/cailloux/faune">Faune</a></li>
-                                <li><a class="dropdown-item" href="http://localhost:8000/cailloux/flore">Flore</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/{{_locale}}/cailloux/faune">{% trans %}Accueil.Faune.faune{% endtrans %}</a></li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/{{_locale}}/cailloux/flore">{% trans %}Accueil.Flore.flore{% endtrans %}</a></li>
                             </ul>
                         </li>                   
                     </ul>
@@ -76,8 +76,8 @@
         </div>
         <div class="card-footer fixed-bottom">
             <p class="card-text">Loubriat Flavien</p>
-            <a href="https://loubriatnc.nc" class="btn btn-primary">Visité le portfolio</a>
-            <p class="card-text">Année de parution : 2024</p>
+            <a href="https://loubriatnc.nc" class="btn btn-primary">{% trans %}Footer.portfolio{% endtrans %}</a>
+            <p class="card-text">{% trans %}Transversal.Annee_parution{% endtrans %} : 2024</p>
         </div>
     </body>
 </html>

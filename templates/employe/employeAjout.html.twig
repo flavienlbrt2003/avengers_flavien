@@ -8,9 +8,30 @@
 
 {% block body %}
 <div class="container">
-    <h1>Employé</h1>
+    <h1>{% trans %}Transversal.Employe{% endtrans %}</h1>
 
-    {{ form(form) }}
+    {{ form_start(form) }}
+        
+        <div class="form-group">
+            <h5>{% trans %}Transversal.Nom{% endtrans %}</h5>
+            {{ form_widget(form.Nom, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <h5>{% trans %}Transversal.prenom{% endtrans %}</h5>
+            {{ form_widget(form.Prenom, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <h5>{% trans %}Employe.adresse{% endtrans %}</h5>
+            {{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_widget(form.Valider, {'attr': {'class': 'btn'}}) }}
+        </div>
+        
+        {{ form_end(form) }}
 
 
 </div>

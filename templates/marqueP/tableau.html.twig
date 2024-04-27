@@ -8,19 +8,19 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste des URL</h1>
+        <h1>{% trans %}MarqueP.liste_URL{% endtrans %}</h1>
 
-        <a class="btn-ajouter" href="http://localhost:8000/marque/ajout">Ajouter un marque page</a><br><br>
+        <a class="btn-ajouter" href="http://localhost:8000/{{_locale}}/marque/ajout">{% trans %}Accueil.MarqueP.ajouter_marque_page{% endtrans %}</a><br><br>
 
         {% if marquesP is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
                         <th>Url</th>
-                        <th>Date de création</th>
-                        <th>Commentaire</th>
-                        <th>Détails</th>
-                        <th>Modifier</th>
+                        <th>{% trans %}MarqueP.date_creation{% endtrans %}</th>
+                        <th>{% trans %}Transversal.Commentaire{% endtrans %}</th>
+                        <th>{% trans %}Transversal.Details{% endtrans %}</th>
+                        <th>{% trans %}Transversal.Modifier{% endtrans %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,14 +29,14 @@
                             <td><a href="{{ mp.url }}" target="_blank">{{ mp.url }}</a></td>
                             <td>{{ mp.dateCreation | date("d/m/Y") }}</td>
                             <td>{{ mp.commentaire }}</td>
-                            <td><a href="http://localhost:8000/marque/detail/{{mp.id}}">Détails</a></td>
-                            <td><a href="http://localhost:8000/marque/modifMP/{{mp.id}}">Modifier</a></td>
+                            <td><a href="http://localhost:8000/{{_locale}}/marque/detail/{{mp.id}}">{% trans %}Transversal.Details{% endtrans %}</a></td>
+                            <td><a href="http://localhost:8000/{{_locale}}/marque/modifMP/{{mp.id}}">{% trans %}Transversal.Modifier{% endtrans %}</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
         {% else %}
-            <p>Aucune URL trouvé.</p>
+            <p>{% trans %}MarqueP.auncun_marqueP{% endtrans %}</p>
         {% endif %}
     </div>
 {% endblock %} 

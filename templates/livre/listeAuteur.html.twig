@@ -6,16 +6,16 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Auteur ayant écrit plus de {{ nbLivre }} Livres</h1>
+        <h1>{% trans %}Livre.liste_livre_auteur{% endtrans %} {{ nbLivre }} {% trans %}Transversal.Livres{% endtrans %}</h1>
 
         {% if listeAuteur is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Nombre de livres</th>
-                        <th>Liste des livres de l'auteur</th>
+                        <th>{% trans %}Transversal.Nom{% endtrans %}</th>
+                        <th>{% trans %}Transversal.prenom{% endtrans %}</th>
+                        <th>{% trans %}Livre.nb_livre{% endtrans %}</th>
+                        <th>{% trans %}Livre.liste_livre_auteur{% endtrans %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,15 +24,15 @@
                             <td>{{ l[0].nom }}</td>
                             <td>{{ l[0].prenom }} </td>
                             <td>{{ l.nombre_de_livres }} </td>
-                            <td><a href="http://localhost:8000/auteur/liste/{{ l[0].id }}">Liste</a></td>
+                            <td><a href="http://localhost:8000/{{_locale}}/auteur/liste/{{ l[0].id }}">Liste</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+            <a href="http://localhost:8000/{{_locale}}/livre">{% trans %}Livre.retour_livre{% endtrans %}</a>
         {% else %}
-            <p>Aucun auteur trouvé.</p>
-            <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+            <p>{% trans %}Auteur.auncun_auteur{% endtrans %}</p>
+            <a href="http://localhost:8000/{{_locale}}/livre">{% trans %}Livre.retour_livre{% endtrans %}</a>
         {% endif %}
     </div>
 {% endblock %} 

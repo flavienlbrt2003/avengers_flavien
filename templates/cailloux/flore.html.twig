@@ -8,21 +8,19 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste de la  Flore</h1>
+        <h1>{% trans %}Flore.liste_flores{% endtrans %}</h1>
 
         {% if flore is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Image</th>
-                        <th>Commentaire</th>
+                        <th>{% trans %}Transversal.image{% endtrans %}</th>
+                        <th>{% trans %}Transversal.Commentaire{% endtrans %}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for f in flore %}
                         <tr>
-                            <td>{{ f.id }}</td>
                             <td><img src={{ f.image }} width=20% height=20%></img></td>
                             <td>{{ f.commentaire }}</td>
                         </tr>
@@ -30,7 +28,7 @@
                 </tbody>
             </table>
         {% else %}
-            <p>Aucune flore trouvé.</p>
+            <p>{% trans %}Flore.aucune_flore{% endtrans %}</p>
         {% endif %}
     </div>
 {% endblock %} 

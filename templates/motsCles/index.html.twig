@@ -6,30 +6,30 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste des Mots Clés</h1>
+        <h1>{% trans %}MotCle.liste_mots_cles{% endtrans %}</h1>
 
-        <a class="btn-ajouter" href="http://localhost:8000/marque/motcleAjout">Ajouter un mots clés</a><br><br>
+        <a class="btn-ajouter" href="http://localhost:8000/{{_locale}}/marque/motcleAjout">{% trans %}Accueil.MotCle.ajouter_mot_cle{% endtrans %}</a><br><br>
 
         {% if motscles is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>Libelle</th>
-                        <th>Modifier</th>
+                        <th>{% trans %}Transversal.libelle{% endtrans %}</th>
+                        <th>{% trans %}Transversal.Modifier{% endtrans %}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for mc in motscles %}
                         <tr>
                             <td>{{ mc.libelle }}</td>
-                            <td><a href="http://localhost:8000/marque/modifMC/{{mc.id}}">Modifier</a></td>
+                            <td><a href="http://localhost:8000/{{_locale}}/marque/modifMC/{{mc.id}}">{% trans %}Transversal.Modifier{% endtrans %}</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
 
         {% else %}
-            <p>Aucun mot clé trouvé.</p>
+            <p>{% trans %}MotCle.auncun_marqueP{% endtrans %}</p>
         {% endif %}
     </div>
 {% endblock %}

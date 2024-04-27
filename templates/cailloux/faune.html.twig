@@ -8,21 +8,19 @@
 
 {% block body %}
     <div class="container">
-        <h1>Liste de la Faunes</h1>
+        <h1>{% trans %}Faune.liste_Faunes{% endtrans %}</h1>
 
         {% if faunes is not empty %}
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Image</th>
-                        <th>Commentaire</th>
+                        <th>{% trans %}Transversal.image{% endtrans %}</th>
+                        <th>{% trans %}Transversal.Commentaire{% endtrans %}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for f in faunes %}
                         <tr>
-                            <td>{{ f.id }}</td>
                             <td><img src={{ f.image }} width=20% height=20%></img></td>
                             <td>{{ f.commentaire }}</td>
                         </tr>
@@ -30,7 +28,7 @@
                 </tbody>
             </table>
         {% else %}
-            <p>Aucune faune trouvé.</p>
+            <p>{% trans %}Faune.aucune_faune{% endtrans %}</p>
         {% endif %}
     </div>
 {% endblock %} 

@@ -33,9 +33,20 @@
 
 {% block body %}
     <div class="container">
-        <h1>Mot Clé</h1>
+        <h1>{% trans %}Accueil.Mot_Cle{% endtrans %}</h1>
 
-        {{ form(form) }}
+        {{ form_start(form) }}
+        
+        <div class="form-group">
+            <h5>{% trans %}Transversal.libelle{% endtrans %}</h5>
+            {{ form_widget(form.Libelle, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_widget(form.Valider, {'attr': {'class': 'btn'}}) }}
+        </div>
+        
+        {{ form_end(form) }}
         
 
     </div>

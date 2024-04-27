@@ -1,0 +1,120 @@
+Accueil:
+  Employe:
+    liste_employes: Go to employee list
+    ajouter_employe : Add an employee
+
+  MarqueP:
+    liste_marques_pages: Go to bookmark list
+    ajouter_marque_page : Add a bookmark
+
+  MotCle:
+    motcle: Keyword
+    liste_mots_cles: Go to keyword list
+    ajouter_mot_cle : Add a Keyword
+
+  Livre:
+    livre: Book
+    liste_livres: Go to book list
+    ajouter_livre : Add a book
+
+  Auteur:
+    liste_auteurs: Go to author list
+    ajouter_auteur : Add an author
+
+  Faune:
+    faune: Wildlife
+    liste_faune: Go to wildlife list
+
+  Flore:
+    flore: Flora
+    liste_flore: Go to flora list
+
+
+Employe:
+  liste_employes: List of employees
+  adresse: Address
+  auncun_employe: No employee found
+  employe_enregistre: Your employee has been successfully registered
+  retour_employe: Return to list of employees
+
+
+MarqueP:
+  liste_URL: List of URLs
+  date_creation : Creation date
+  detail_marqueP: Bookmark Details
+  auncun_marqueP: No bookmark found
+  retour_marqueP: Retour à la liste des bookmarks
+  marqueP_enregistre: Your bookmark has been successfully registered
+
+
+MotCle:
+  liste_mots_cles: List of Keywords
+  auncun_marqueP: No keyword found
+  marqueP_enregistre: Your keyword has been successfully registered
+
+
+Livre:
+  liste_livres: List of Books
+  titre: Title
+  date_parution: Release date
+  detail_livre: Book Details
+  auncun_livre: No books found
+  retour_livre: Return to list of books
+  nb_livre_enregistre: Count of books registered
+  liste_auteur_livre: List of Authors who have written more than
+  nb_livre: Count of books
+  liste_livre_auteur: List of books by the author
+  livre_enregistre: Your book has been successfully registered
+
+
+Auteur:
+  Nom: Name
+  liste_auteurs: List of Authors
+  liste: List
+  liste_livres_auteur: List of books by the author
+  auncun_auteur: No authors found
+  auteur_enregistre: Your author has been successfully registered
+  retour_auteur: Return to list of authors
+  
+
+Faune:
+  liste_Faunes: Wildlife List
+  aucune_faune: No faune found
+
+
+Flore:
+  liste_faunes: List of Flora
+  aucune_flore: No flore found
+
+Header:
+  titre: Symfony in all its forms !
+  biblio: Library
+
+
+Footer:
+  portfolio: Visit the protfolio
+
+
+Transversal:
+  Accueil: Home
+  Employes: Employees
+  Employe: Employee
+  Marques_Pages: Bookmarks
+  Marque_Page: Bookmark
+  Mot_Cle: Keyword
+  Mots_Cles: Keywords
+  Livres: Books
+  Livre: Book
+  Auteur: Author
+  Auteurs: Authors
+  Valider: Validate
+  Details: Details
+  Modifier: Modify
+  Nom: Surname
+  prenom: Firstname
+  Annee_parution: Publication year
+  Commentaire: Comment
+  image: Picture
+  Modif_auteur: Edit author
+  libelle: Wording
+  valeur: Value

@@ -6,8 +6,8 @@
 
 {% block body %}
 <div class="container">
-    <h1>Votre livre à bien été enregistré ! ✅</h1>
-    <a href="http://localhost:8000/livre"> Retour à la liste des livres</a>
+    <h1>{% trans %}Livre.livre_enregistre{% endtrans %} ! ✅</h1>
+    <a href="http://localhost:8000/{{_locale}}/livre">{% trans %}Livre.retour_livre{% endtrans %}</a>
 </div>
 
 {% endblock %}

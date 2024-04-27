@@ -11,27 +11,30 @@ use App\Entity\MotCles;
 use App\Form\Type\MarquePType;
 use App\Form\Type\MotClesType;
 
-#[Route("/marque", requirements: ["_locale" => "en|es|fr"], name: "marque_")]
+#[Route(path: "/{_locale}/marque", requirements: ["_locale" => "en|es|fr"], name: "marque_")]
 class MarquePageController extends AbstractController
 {
     #[Route('/')]
-    public function afficherTable(EntityManagerInterface $entityManager): Response {
+    public function afficherTable(EntityManagerInterface $entityManager, Request $request): Response {
         $marquesP = $entityManager->getRepository(MarquePage::class)->findAll();
+        $locale = $request->getLocale();
         return $this->render('marqueP/tableau.html.twig', [
             'marquesP' => $marquesP,
+            '_locale' => $locale,
         ]);
     }
 
     #[Route('/detail/{id}', name: 'detailMarqueP')]
-    public function detail(EntityManagerInterface $entityManager, int $id): Response {
+    public function detail(EntityManagerInterface $entityManager, int $id, Request $request): Response {
         $marquePage = $entityManager->getRepository(MarquePage::class)->find($id);
-
+        $locale = $request->getLocale();
         if (!$marquePage) {
             throw $this->createNotFoundException("Le marque-page demandé n'existe pas");
         }
 
         return $this->render('marqueP/detail.html.twig', [
             'marquePage' => $marquePage,
+            '_locale' => $locale,
         ]);
     }
 
@@ -40,6 +43,7 @@ class MarquePageController extends AbstractController
         $marqueP = new MarquePage();
         $form = $this->createForm(MarquePType::class, $marqueP);
         $form->handleRequest($request);
+        $locale = $request->getLocale();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($marqueP);
             $entityManager->flush();
@@ -47,6 +51,7 @@ class MarquePageController extends AbstractController
         }
         return $this->render('marqueP/marquePAjout.html.twig', [
             'form' => $form,
+            '_locale' => $locale,
         ]);
     }
 
@@ -56,6 +61,7 @@ class MarquePageController extends AbstractController
             $marqueP = $entityManager->getRepository(MarquePage::class)->find($id);
             $form = $this->createForm(MarquePType::class, $marqueP);
             $form->handleRequest($request);
+            $locale = $request->getLocale();
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager->persist($marqueP);
                 $entityManager->flush();
@@ -63,21 +69,27 @@ class MarquePageController extends AbstractController
             }
             return $this->render('marqueP/marquePAjout.html.twig', [
                 'form' => $form,
+                '_locale' => $locale,
             ]);
         }
 
     #[Route('/marqueP_succes', name: 'succes')]
-    public function MarquePSucces(EntityManagerInterface $entityManager): Response {
-        return $this->render('marqueP/marqueP_succes.html.twig');
+    public function MarquePSucces(EntityManagerInterface $entityManager, Request $request): Response {
+        $locale = $request->getLocale();
+        return $this->render('marqueP/marqueP_succes.html.twig', [
+            '_locale' => $locale,
+        ]);
     }
 
 
     // Mots Clés
     #[Route('/motcle')]
-    public function afficherMotsCles(EntityManagerInterface $entityManager): Response {
+    public function afficherMotsCles(EntityManagerInterface $entityManager, Request $request): Response {
         $motscles = $entityManager->getRepository(MotCles::class)->findAll();
+        $locale = $request->getLocale();
         return $this->render('motsCles/index.html.twig', [
             'motscles' => $motscles,
+            '_locale' => $locale,
         ]);
     }
 
@@ -86,6 +98,7 @@ class MarquePageController extends AbstractController
         $motcle = new MotCles();
         $form = $this->createForm(MotClesType::class, $motcle);
         $form->handleRequest($request);
+        $locale = $request->getLocale();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($motcle);
             $entityManager->flush();
@@ -93,6 +106,7 @@ class MarquePageController extends AbstractController
         }
         return $this->render('motsCles/motcleAjout.html.twig', [
             'form' => $form,
+            '_locale' => $locale,
         ]);
     }
 
@@ -102,6 +116,7 @@ class MarquePageController extends AbstractController
         $motC = $entityManager->getRepository(MotCles::class)->find($id);
         $form = $this->createForm(MotClesType::class, $motC);
         $form->handleRequest($request);
+        $locale = $request->getLocale();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($motC);
             $entityManager->flush();
@@ -109,12 +124,16 @@ class MarquePageController extends AbstractController
         }
         return $this->render('motsCles/motcleAjout.html.twig', [
             'form' => $form,
+            '_locale' => $locale,
         ]);
     }
 
     #[Route('/motcle_succes', name: 'motclesucces')]
-    public function MotCleSucces(EntityManagerInterface $entityManager): Response {
-        return $this->render('motsCles/motcle_succes.html.twig');
+    public function MotCleSucces(EntityManagerInterface $entityManager, Request $request): Response {
+        $locale = $request->getLocale();
+        return $this->render('motsCles/motcle_succes.html.twig', [
+            '_locale' => $locale,
+        ]);
     }
 }
 
